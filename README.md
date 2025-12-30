@@ -78,9 +78,22 @@ streamlit run dashboard.py
 
 ### 3. Run Inference via Command Line
 To test the model on a specific video file without the GUI:
-```bash
 python tools/demo_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --input_video your_video.mp4
 ```
+
+### 4. Run Full Validation & Testing
+To reproduce the validation and test results (84.73% / 91.67%):
+
+1.  **Download Dataset:**
+    *   Get the pre-split dataset (Val & Test) from **[Google Drive](https://drive.google.com/drive/folders/14ym_VKw0xfOGKdirNYaraI_xvv6cbXDI?usp=sharing)**.
+    *   Extract them into the `videos/` directory so you have `videos/val/` and `videos/test/`.
+
+2.  **Run Evaluation:**
+    *   Open `student_engagement.ipynb` and run **Section 4b** (Validation) and **Section 5** (Test).
+    *   *Alternative (CMD):* You can run the testing script directly:
+        ```bash
+        python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth
+        ```
 
 ---
 
