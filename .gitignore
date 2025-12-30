@@ -31,6 +31,7 @@ hasil_bbox_keren.mp4
 *.pyth
 *.pth
 *.pkl
+!checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth
 
 # VS Code / IDE
 .vscode/
