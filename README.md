@@ -89,4 +89,4 @@ python tools/demo_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --input_vi
 -   **Input**: MP4 Video clips.
 -   **Validation Accuracy**: 84.73% (Full Manual Verification).
 -   **Test Set Accuracy**: 91.67% (On Unseen Data).
--   **Pre-trained Model**: [Download Checkpoint Here (Google Drive)] https://drive.google.com/drive/folders/14ym_VKw0xfOGKdirNYaraI_xvv6cbXDI?usp=sharing
+-   **Pre-trained Model**: [Download Checkpoint Here (Google Drive)](https://drive.google.com/drive/folders/14ym_VKw0xfOGKdirNYaraI_xvv6cbXDI?usp=sharing) (jika tidak pakai git lfs).
