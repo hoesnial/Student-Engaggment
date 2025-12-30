@@ -78,7 +78,7 @@ cp test.csv test_backup.csv
 cp val.csv test.csv
 
 # 3. Run Inference (Saves to exp2_val_mp4_full)
-python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_val_mp4_full
+./.venv/Scripts/python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --opts DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_val_mp4_full NUM_GPUS 0
 
 # 4. Restore test.csv
 mv test_backup.csv test.csv
@@ -87,7 +87,7 @@ mv test_backup.csv test.csv
 #### B. Run Testing (On `test.csv`)
 ```bash
 # Run Inference (Saves to exp2_test_mp4)
-python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_test_mp4
+./.venv/Scripts/python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --opts DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_test_mp4 NUM_GPUS 0
 ```
 
 #### C. Open the Notebook
