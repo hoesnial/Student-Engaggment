@@ -411,6 +411,10 @@ We can visualize the detection + classification by running our prototype script 
 """))
 
 nb.cells.append(nbf.v4.new_code_cell("""
+import os
+import sys
+import subprocess
+
 input_video = "videos/train/high/view12.mp4" # Or videos/val/high/view1.mp4
 if not os.path.exists(input_video):
     # Fallback search
