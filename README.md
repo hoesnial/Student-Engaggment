@@ -1,20 +1,81 @@
-# OUC-CGE
-OUC-CGE (OUC Classroom Group Engagement Dataset), designed for recognizing student group engagement in classroom environments using visual cues, is the first benchmark for group engagement analysis in real - world classroom settings with pure visual signals. The dataset is divided into three categories of high, medium, and low student group engagement levels following an 8:1:1 ratio, which is applied when splitting it into training, validation, and test subsets to ensure balanced data representation for model training and evaluation. Comprising 7,705 meticulously annotated 10 - second classroom clips across STEM and Humanities domains, and differing from existing datasets by targeting the whole classroom, it has been tested with several classical models. Through a technical - pedagogical dual validation strategy, OUC - CGE exhibits good consistency and discriminability compared to existing datasets, thus qualifying as a benchmark for future research on recognizing student group engagement levels. 
-# Experiments
-We tried six methods to achieve student group engagement classification.The accuracy rates of different models are as follows: SlowFast 93.2%, C2D 94.3%, I3D 93.3%, X3D 96.8%, SLOW - NLN 97.4%, and SLOW 97.8%. These results highlight OUC-CGE1's reliability and effectiveness, providing crucial references for related research. The official source code of the above methods can be obtained by visiting https://github.com/facebookresearch/SlowFast.
-# Demo
+# Student Engagement Recognition System 🎓📊
 
+A Deep Learning project designed to automatically classify student engagement levels in classroom videos using the **SlowFast** action recognition network.
 
+## 🌟 Project Overview
+This system analyzes video footage to determine the engagement level of students. It utilizes a state-of-the-art **SlowFast (ResNet50)** architecture to capture both spatial context (scene details) and temporal dynamics (motion/behavior).
 
+### Classes
+The model classifies engagement into three levels:
+1.  **Low Engagement** 🔴 (Distracted, sleeping, looking away)
+2.  **Mid Engagement** 🟡 (Passive listening, neutral posture)
+3.  **High Engagement** 🟢 (Active participation, taking notes, raising hands)
 
+---
 
-https://github.com/user-attachments/assets/b46690e3-e947-4e45-9697-8b63c90be822
+## 🚀 Getting Started
 
+### Prerequisites
+-   **OS**: Windows 10/11 (Recommended) or Linux.
+-   **Python**: 3.8 - 3.9.
+-   **GPU**: NVIDIA GPU with CUDA support (Recommended for training).
 
+### Installation
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/hoesnial/Student-Engaggment.git
+    cd Student-Engaggment
+    ```
 
-https://github.com/user-attachments/assets/ea8b881c-8198-4aa7-b250-20e5412e3ce0
+2.  Create and activate a virtual environment (optional but recommended):
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate  # Windows
+    # source .venv/bin/activate  # Linux/Mac
+    ```
 
+3.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
+---
 
-https://github.com/user-attachments/assets/4a528bfe-6d87-47d7-9083-a9f2a069ef77
+## 📂 Project Structure
 
+-   `student_engagement_FINAL_v11.ipynb`: **Main Report**. Contains the full analysis, training logs, validation results, and confusion matrices.
+-   `dashboard.py`: **Interactive Demo**. A Streamlit app to test the model on new videos.
+-   `configs/`: Configuration files for the SlowFast model.
+-   `tools/`: Core scripts for training and inference.
+-   `videos/`: Dataset directory (Gitignored).
+
+---
+
+## 💻 How to Run
+
+### 1. View the Analysis Report
+Open the Jupyter Notebook to see the complete project walkthrough and performance metrics (Accuracy ~91%):
+```bash
+jupyter notebook student_engagement_FINAL_v11.ipynb
+```
+
+### 2. Run the Interactive Dashboard (Demo)
+Launch the Streamlit app to upload your own videos and see the engagement prediction in real-time:
+```bash
+streamlit run dashboard.py
+```
+
+### 3. Run Inference via Command Line
+To test the model on a specific video file without the GUI:
+```bash
+python tools/demo_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --input_video your_video.mp4
+```
+
+---
+
+## 📊 Dataset & Model Details
+-   **Backbone**: ResNet-50 (SlowFast variants).
+-   **Input**: MP4 Video clips.
+-   **Training Accuracy**: ~99%
+-   **Validation Accuracy**: ~89.3%
+-   **Test Set Accuracy**: 91.67% (on 60 unseen videos).
