@@ -1,0 +1,16 @@
+fvcore
+simplejson
+numpy<2
+pandas
+pyyaml
+tqdm
+av
+opencv-python
+scikit-learn
+tensorboard
+matplotlib
+termcolor
+moviepy
+psutil
+iopath
+

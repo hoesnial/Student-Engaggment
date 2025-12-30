@@ -1,0 +1,40 @@
+# System
+__pycache__/
+*.pyc
+.venv/
+.env
+NUL
+
+# Dataset & Large Files
+videos/
+frames_data/
+checkpoints/
+out_videos/
+
+# Generated CSVs (paths are local)
+val_mp4.csv
+val_mp4_mini.csv
+test_mp4.csv
+
+# Logs
+*.log
+stdout.log
+json_stats.log
+
+# Output Media
+*.mp4
+*.avi
+output_bbox_demo.mp4
+hasil_bbox_keren.mp4
+
+# Checkpoints
+*.pyth
+*.pth
+*.pkl
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
