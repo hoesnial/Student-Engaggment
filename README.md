@@ -65,7 +65,33 @@ The dataset used in this project was sourced from **[OSF: Student Engagement Dat
 ## 💻 How to Run
 
 ### 1. View the Analysis Report
-Open the Jupyter Notebook to see the complete project walkthrough and performance metrics (Accuracy ~91%):
+**⚠️ PREREQUISITE: Run Validation & Testing First!**
+The notebook requires the results from the model evaluation. Before opening the notebook, please run the following commands to generate the data:
+
+#### A. Run Validation (On `val.csv`)
+Since the test script defaults to `test.csv`, we temporarily use `val.csv`:
+```bash
+# 1. Backup actual test.csv
+cp test.csv test_backup.csv
+
+# 2. Use validation data as test input
+cp val.csv test.csv
+
+# 3. Run Inference (Saves to exp2_val_mp4_full)
+python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_val_mp4_full
+
+# 4. Restore test.csv
+mv test_backup.csv test.csv
+```
+
+#### B. Run Testing (On `test.csv`)
+```bash
+# Run Inference (Saves to exp2_test_mp4)
+python tools/run_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml DATA.PATH_TO_DATA_DIR ./ TEST.CHECKPOINT_FILE_PATH checkpoints/exp2/checkpoints/checkpoint_epoch_00050.pyth OUTPUT_DIR checkpoints/exp2_test_mp4
+```
+
+#### C. Open the Notebook
+Once the results are generated, open the notebook to view the report:
 ```bash
 jupyter notebook student_engagement.ipynb
 ```
