@@ -56,7 +56,7 @@ The model classifies engagement into three levels:
 ### 1. View the Analysis Report
 Open the Jupyter Notebook to see the complete project walkthrough and performance metrics (Accuracy ~91%):
 ```bash
-jupyter notebook student_engagement_FINAL_v11.ipynb
+jupyter notebook student_engagement.ipynb
 ```
 
 ### 2. Run the Interactive Dashboard (Demo)
