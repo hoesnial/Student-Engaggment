@@ -411,7 +411,13 @@ We can visualize the detection + classification by running our prototype script 
 """))
 
 nb.cells.append(nbf.v4.new_code_cell("""
-input_video = "videos/high/view12.mp4"
+input_video = "videos/train/high/view12.mp4" # Or videos/val/high/view1.mp4
+if not os.path.exists(input_video):
+    # Fallback search
+    for root, dirs, files in os.walk("videos"):
+        if "view12.mp4" in files:
+            input_video = os.path.join(root, "view12.mp4")
+            break
 output_video_path = "output_bbox_demo.mp4"
 
 if os.path.exists(input_video):
