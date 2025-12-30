@@ -51,6 +51,17 @@ The model classifies engagement into three levels:
 
 ---
 
+---
+
+## 📂 Dataset Source & Preprocessing
+The dataset used in this project was sourced from **[OSF: Student Engagement Dataset](https://osf.io/brd2c/overview)**.
+
+**Processing Steps:**
+1.  **Download:** Raw videos were retrieved from OSF.
+2.  **Conversion:** Videos were processed into frame-based formats (JPG/NPZ features) to enable efficient loading.
+    -   **Script used:** `tools/convert_video_to_frames.py`
+    -   **Function:** Extracts individual frames from `.mp4` files and organizes them into class-specific folders.
+
 ## 💻 How to Run
 
 ### 1. View the Analysis Report
@@ -78,4 +89,4 @@ python tools/demo_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --input_vi
 -   **Input**: MP4 Video clips.
 -   **Validation Accuracy**: 84.73% (Full Manual Verification).
 -   **Test Set Accuracy**: 91.67% (On Unseen Data).
--   **Pre-trained Model**: [Download Checkpoint Here (Google Drive)](INSERT_LINK_HERE) *(If not using Git LFS)*.
+-   **Pre-trained Model**: [Download Checkpoint Here (Google Drive)] https://drive.google.com/drive/folders/14ym_VKw0xfOGKdirNYaraI_xvv6cbXDI?usp=sharing

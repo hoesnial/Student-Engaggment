@@ -111,7 +111,12 @@ def process_batch(csv_file, root_video_dir, output_root):
 # === 3. Dataset Management ===
 nb.cells.append(nbf.v4.new_markdown_cell("""
 ## 3. Dataset Preparation
-We organize the dataset using CSV files that map frame directories to labels.
+### Source & Preprocessing
+The dataset was obtained from **[OSF: Student Engagement Dataset](https://osf.io/brd2c/overview)**.
+The raw videos were downloaded and preprocessed (converted to per-frame `.npz` format/frames) using the script `tools/convert_video_to_frames.py` to create a structured dataset for training.
+
+### Data Split
+We organize the dataset using CSV files that map frame/video paths to labels.
 - **Labels:** 0 (Low), 1 (Mid), 2 (High)
 """))
 
@@ -433,7 +438,7 @@ else:
     print(f"Input video not found: {input_video}")
 """))
 
-with open('student_engagement_FINAL_v11.ipynb', 'w', encoding='utf-8') as f:
+with open('student_engagement_FINAL_v13.ipynb', 'w', encoding='utf-8') as f:
     nbf.write(nb, f)
 
-print("Notebook generated: student_engagement_FINAL_v11.ipynb")
+print("Notebook generated: student_engagement_FINAL_v13.ipynb")
