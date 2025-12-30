@@ -76,6 +76,6 @@ python tools/demo_net.py --cfg configs/Kinetics/SLOWFAST_8x8_R50.yaml --input_vi
 ## 📊 Dataset & Model Details
 -   **Backbone**: ResNet-50 (SlowFast variants).
 -   **Input**: MP4 Video clips.
--   **Training Accuracy**: ~99%
--   **Validation Accuracy**: ~89.3%
--   **Test Set Accuracy**: 91.67% (on 60 unseen videos).
+-   **Validation Accuracy**: 84.73% (Full Manual Verification).
+-   **Test Set Accuracy**: 91.67% (On Unseen Data).
+-   **Pre-trained Model**: [Download Checkpoint Here (Google Drive)](INSERT_LINK_HERE) *(If not using Git LFS)*.
